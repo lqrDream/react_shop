@@ -22,7 +22,7 @@ axios.interceptors.request.use((config) => {
 
 //添加一个响应拦截
 axios.interceptors.response.use(function(response) {
-    console.log('响应拦截',response);
+    // console.log('响应拦截',response);
 
     let router=new Router();
     //token过期: 返回值2,当前路由不是login时跳转
