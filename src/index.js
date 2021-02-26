@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Home from "./pages/home/home";
-import './plugins/axios';
-// import LnavTest from "./components/L-nav/Lnav.test";
+// import './plugins/axios';
+import './plugins/umi-request'
 import {BrowserRouter} from 'react-router-dom'
-import LSwitchTest from "./components/L-switch/Lswitch.test";
-
+import Default from "./layouts/default/default";
+import './assets/css/base.css'
 
 ReactDOM.render(
     <BrowserRouter>
-        {/*<LnavTest/>*/}
-        <LSwitchTest/>
+        <Default/>
+        {/*<LSwitchTest/>*/}
     </BrowserRouter>
     ,
     document.getElementById('root')

@@ -1,8 +1,7 @@
 import {Component} from 'react'
 import Lnav from "./index";
 import LInput from "../L-input";
-import LTabBar from "../L-tabbar";
-export default class LnavTest extends Component {
+export default class LtabbarTest extends Component {
     render() {
         return (
                 <div>
@@ -14,7 +13,6 @@ export default class LnavTest extends Component {
                         {/*<input type="text" style={{height:'30px',marginTop:'4px',width:'100%',fontSize:'18px',paddingLeft:"5px"}}/>*/}
                         <LInput type={'text'} />
                     </Lnav>
-                    <LTabBar/>
                 </div>
         )
     }

@@ -3,7 +3,7 @@ import PropsTypes from 'prop-types'
 import styles from './Lnav.module.css'
 import {withRouter} from 'react-router-dom'
 
-class Index extends Component {
+class Lnav extends Component {
     static defaultProps = {};
     static propTypes = {
         leftText: PropsTypes.string,
@@ -12,7 +12,6 @@ class Index extends Component {
         title: PropsTypes.oneOfType([PropsTypes.array, PropsTypes.string]),
         rightOnClick: PropsTypes.func
     }
-
     render() {
         let {leftText, rightText, title, history, rightOnClick, children} = this.props
         return (
@@ -51,4 +50,4 @@ class Index extends Component {
 
 }
 
-export default withRouter(Index)
+export default withRouter(Lnav)

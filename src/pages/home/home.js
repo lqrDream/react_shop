@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './home.css'
 
 export default class Home extends Component {
     state = {
@@ -8,11 +9,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h3>头部</h3>
-                <button onClick={() => {
-                    this.setState({a: 'sss'})
-                }}>触发更新函数
-                </button>
+
             </div>
         )
     }
@@ -32,11 +29,13 @@ export default class Home extends Component {
     //
     // }
     //
-    // componentDidMount() {
-    //     // this.axios('/m5/home/multidata').then(res => {
-    //     //     console.log(res)
-    //     // })
-    // }
+    componentDidMount() {
+        // this.axios('/m5/home/multidata').then(res => {
+        //     console.log(res)
+        // })
+        console.log(this)
+
+    }
     // componentWillUpdate(nextProps, nextState, nextContext) {
     //     console.log('触发了即将更新')
     //     // console.log(this.state)

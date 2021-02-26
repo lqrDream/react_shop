@@ -1,47 +1,58 @@
 import {Component} from 'react'
 import propTypes from 'prop-types'
-import './input.css'
+import styles from './input.module.css'
 
 export default class LInput extends Component {
-    // 定义默认值 必须是静态属性
-    static defaultProps={
-        muti: false,
-        type: 'text'
+    static defaultProps = {
+        type: 'text',
+        model: null,
+        multi: false,
+        label: '',
+        style: {}
     };
+    static propTypes = {
+        type: function (props, propName, componentName) {
+            if (!/(text|password|button|number|file|email)/.test(props[propName])) {
+                return new Error(
+                    'Invalid prop `' + propName + '` supplied to' +
+                    ' `' + componentName + '`. Validation failed.'
+                );
+            }
+        },
 
-    static propTypes={
-        type: propTypes.string,
-        muti: propTypes.bool,
         model: propTypes.shape({
             name: propTypes.string.isRequired,
-            value:propTypes.string.isRequired,
-            onChange:propTypes.func.isRequired,
-        })
+            value: propTypes.string.isRequired,
+            onChange: propTypes.func.isRequired
+        }),
+        multi: propTypes.bool,
+        style: propTypes.object,
     };
 
-    renderInput=()=>{
-        if (!this.props.model){
-            return <input type="text" />
+    renderInput = () => {
+        let {model, type,style} = this.props;
+        //非受控
+        if (!model) {
+            return  <input  className={styles.lInput} type={type} defaultValue="" style={style}/>
         }
-        let {model:{name,value,onChange},type} = this.props;
-        return <input type={type} name={name} value={value} onChange={onChange}/>
+        //受控
+        let {name, value, onChange} = model;
+        return <input style={style} className={styles.lInput} type={type} value={value} name={name} onChange={onChange}/>
+
     };
 
-
-    renderTextarea=()=>{
-        let {model:{name,value,onChange}} = this.props;
-        return <textarea name={name}  value={value} onChange={onChange} />
-    };
-
-    render(){
-
-        let {muti} = this.props;
-
-        if (muti){
-            return this.renderTextarea()
-        } else {
-            return this.renderInput()
+    renderTextArea = () => {
+        let {model,style} = this.props;
+        //非受控
+        if (!model) {
+            return <textarea style={style}/>
         }
-
+        //受控
+        let {name, value, onChange} = model;
+        return <textarea style={style} value={value} name={name} onChange={onChange}/>
+    };
+    render() {
+        let {multi} = this.props;
+        return multi ? this.renderTextArea() : this.renderInput();
     }
 }
