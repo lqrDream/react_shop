@@ -1,0 +1,14 @@
+.tab-item {
+    height: 100%;
+    flex: 1;
+    text-align: center;
+}
+
+.tab-item img {
+    display: inline-block;
+    padding: 3px 0 3px 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
