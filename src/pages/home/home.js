@@ -3,13 +3,13 @@ import './home.css'
 
 export default class Home extends Component {
     state = {
-        a: ''
+        a: '我是修改之后的值g'
     }
 
     render() {
         return (
             <div>
-
+                我又测试时了，刚刚测试失败
             </div>
         )
     }
