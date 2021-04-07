@@ -3,7 +3,7 @@ import './home.css'
 
 export default class Home extends Component {
     state = {
-        a: ''
+        a: '我是修改之后的值g'
     }
 
     render() {

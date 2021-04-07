@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 lsdfja dfal
+=======
+aljalsdkjfa;ljfalsdf
+:q：
+>>>>>>> 83ae8f241e4cfebb670c2c143bd5d34bfb1c2087
